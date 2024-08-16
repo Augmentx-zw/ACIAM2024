@@ -48,7 +48,7 @@ namespace ACIAM.Controllers
 		public async Task<IActionResult> ScientificCommittee()
 		{
             var scientific = await _context.Conferences
-                .Where(c => c.Category.ToLower() == "local")
+                .Where(c => c.Category.ToLower() == "scientific")
                 .ToListAsync();
 
             return View(scientific);
@@ -57,7 +57,7 @@ namespace ACIAM.Controllers
 		public async Task<IActionResult> HonoraryCommittee()
 		{
             var honorary = await _context.Conferences
-                .Where(c => c.Category.ToLower() == "local")
+                .Where(c => c.Category.ToLower() == "honorary")
                 .ToListAsync();
 
             return View(honorary);

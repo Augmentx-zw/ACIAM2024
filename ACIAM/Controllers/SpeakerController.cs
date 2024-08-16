@@ -53,6 +53,11 @@ namespace ACIAM.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,Category,SubTitle,Description")] Speaker speaker, IFormFile imageFile)
         {
+            if (imageFile == null)
+            {
+                ModelState.Remove("imageFile");
+            }
+
             if (ModelState.IsValid)
             {
                 if (imageFile != null)

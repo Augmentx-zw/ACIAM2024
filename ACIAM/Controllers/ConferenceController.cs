@@ -52,6 +52,11 @@ namespace ACIAM.Controllers
         [ValidateAntiForgeryToken]
 		public async Task<IActionResult> Create([Bind("Id,Title,Category,SubTitle,Description")] Conference conference, IFormFile imageFile)
 		{
+			if (imageFile == null)
+			{
+				ModelState.Remove("imageFile");
+			}
+
 			if (ModelState.IsValid)
 			{
                 if (imageFile != null)

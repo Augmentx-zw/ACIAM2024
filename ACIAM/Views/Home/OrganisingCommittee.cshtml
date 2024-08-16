@@ -10,12 +10,13 @@
                 @foreach (var conference in Model)
                 {
                     <div class="col-lg-6">
-                        <div class="speaker-post">
-                            <a href="#">
-                                <img src="~/uploads/@conference.Image" alt="@conference.Title" />
-                            </a>
-                            <div class="speaker-content">
-                                <h2><a href="#">@conference.Title</a></h2>
+                        <div class="speaker-post" style="display: flex; align-items: stretch; height: 350px; margin-bottom: 20px;">
+                            <div class="speaker-image" style="flex: 1;">
+                                <img src="~/uploads/@conference.Image" alt="@conference.Title" style="width: 100%; height: 100%; object-fit: cover;" />
+                            </div>
+                            <div class="speaker-content" style="flex: 1; padding: 15px;">
+                                <h2>@conference.Title</h2>
+                                <br/>
                                 <span>@conference.SubTitle</span>
                                 <p>@conference.Description</p>
                             </div>
