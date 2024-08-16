@@ -11,7 +11,7 @@ namespace ACIAM.Data
             
         }
 
-        public DbSet<Application> Applications { get; set; }
-        public DbSet<Participant> Participants { get; set; }
+        public DbSet<Conference> Conferences { get; set; }
+        public DbSet<Speaker> Speakers { get; set; }    
     }
 }

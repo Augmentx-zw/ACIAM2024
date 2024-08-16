@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\admin_styles\" />
+    <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
 
 </Project>

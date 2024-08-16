@@ -1,11 +1,13 @@
-﻿<!-- speaking-section2
+﻿@model IEnumerable<ACIAM.Models.Speaker>
+
+<!-- speaking-section2
 	================================================== -->
 <section class="speaking-section2">
 	<div class="container">
 		<div class="title-section white-style">
 			<div class="row">
 				<div class="col-md-8">
-					<h1>Who's speaking</h1>
+					<h1>Plenary Speakers</h1>
 				</div>
 				<div class="col-md-4">
 					
@@ -16,81 +18,18 @@
 		<div class="speakers-box">
 
 			<div class="row">
-				<div class="col-lg-3 col-md-4 col-sm-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/upload/speakers/sp1.jpg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a asp-action="SpeakerSingle">Prof. Dr. Abdon Atangana</a></h2>
-							<span>University of the Free State, South Africa</span>
+				@foreach (var speaker in Model)
+				{
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="speaker-post">
+							<a href="#"><img src="~/uploads/@speaker.Image" alt="@speaker.Title"></a>
+							<div class="speaker-content">
+								<h2><a asp-action="SpeakerSingle">@speaker.Title</a></h2>
+								<span>@speaker.Description</span>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/upload/speakers/sp1.jpg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Prof. Dr. Daniel O. Makinde</a></h2>
-							<span>University of Stellenbosch, South Africa</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/upload/speakers/sp1.jpg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Prof. Dr. Gaston Nguerekata</a></h2>
-							<span>Morgan State University, United States of America.</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/upload/speakers/sp1.jpg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Prof. Dr. Stefano Boccaletti</a></h2>
-							<span>Institute for Complex Systems, Italy.</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-3 col-md-4 col-sm-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/upload/speakers/sp1.jpg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Darren Doe</a></h2>
-							<span>Creative Director</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/upload/speakers/sp1.jpg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Piera Mcclure</a></h2>
-							<span>Partner Startup</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/upload/speakers/sp1.jpg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Martin Smith</a></h2>
-							<span>Producer, CSI</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/upload/speakers/sp1.jpg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Robert Reed</a></h2>
-							<span>Web Technologist</span>
-						</div>
-					</div>
-				</div>
+				}
 			</div>
 
 		</div>

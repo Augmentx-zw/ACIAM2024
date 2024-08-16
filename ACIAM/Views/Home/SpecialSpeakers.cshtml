@@ -1,7 +1,33 @@
-﻿<section class="speaking-section3">
-	<div class="container">
-		<div class="title-section center">
-			<h1>Special Speakers</h1>
-		</div>
-	</div>
+﻿@model IEnumerable<ACIAM.Models.Speaker>
+
+<style>
+    /* Hover effect for cards */
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+</style>
+
+<section class="speaking-section3">
+    <div class="container">
+        <div class="title-section center">
+            <h1>Special Speakers</h1>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="row">
+            @foreach (var conference in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p class="card-text"><strong>@conference.Title</strong>, @conference.Description</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 </section>

@@ -1,4 +1,6 @@
-﻿<style>
+﻿@model IEnumerable<ACIAM.Models.Conference>
+
+<style>
     /* Hover effect for cards */
     .card:hover {
         transform: translateY(-5px);
@@ -8,219 +10,24 @@
 </style>
 
 <section class="speaking-section3">
-	<div class="container">
-		<div class="title-section center">
-			<h1>Local Organising Committee</h1>
-		</div>
-	</div>
+    <div class="container">
+        <div class="title-section center">
+            <h1>Local Organising Committee</h1>
+        </div>
+    </div>
 
     <div class="container mt-4">
         <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Dr. O.D. Makinde</strong>, Stellenbosch University, South Africa</p>
+            @foreach (var conference in Model)
+            {
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p class="card-text"><strong>@conference.Title</strong>, @conference.Description</p>
+                        </div>
                     </div>
                 </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Dr Abdon Atangana</strong>, University of the Free State, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Professor Natasha Potgieter</strong>, Executive Dean: Faculty of Science, Engineering and Agriculture University of Venda</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Awodwa Magingi</strong>, UFS and National Department of Water and Sanitation, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Asteria-Lea Mwetulundila</strong>, University of the Free State and Department of Water Affairs, Namibia</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Disebo Venoliah Chaka</strong>, University of the Free State, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dr. Makosha Morakaladi</strong>, University of the Free State, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Moliehi Thinyane</strong>, University of the Free State and Geologist at Kopano Ke Matla JV, Lesotho</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Mathapelo Kholotsa</strong>, University of the Free State and Kopanang Gold mine Geologist, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Bomkazi Vava</strong>, University of the Free State, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Dr. Hussein Jafari</strong>, University of South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Dr. Emile Franc D. Goufo</strong>, University of the South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Dr. R.J. Moitsheki</strong>, University of Witwatersrand, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Dr. M. Khumalo</strong>, University of South Africa, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Dr. L. Rundora</strong>, University of Limpopo, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Dr. W. Garira</strong>, University of Venda, South Africa</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dr. R. L. Monaledi</strong>, Stellenbosch University, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dr. S. Lebelo</strong>, Vaal University of Technology, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dr. C. Makasu</strong>, University of Western Cape, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Dr. Suares Clovis</strong>, University North West, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dr. Hangwelani Magau</strong>, Central University of Technology, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Dr. Maba Boniface Matadi</strong>, University of Zululand, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Mohamed Mbehou</strong>, University of Yaounde I, Cameroon</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dr. Ignace Tchangou</strong>, Tshwane University of Technology, South Africa</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dr. Dlamini Anastacia</strong>, University of South Africa, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Prof. Ali Zakaria</strong>, University of South Africa, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Palesa Mohajane</strong>, University of the Free State and Department of Water and Sanitation, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Tlotliso Ellius Nape</strong>, University of the Free State, Lesotho</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Mohau Mahantane</strong>, University of the Free State, Lesotho</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Gandi Khoza</strong>, University of the Free State, South Africa, SACNASP registered</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dineo Ramakatsa</strong>, University of the Free State and Department of Water and Sanitation, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dr. Rendani Makahane</strong>, University of Zululand, South Africa</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dr. Hans Tah</strong>, Researcher at Institute for Groundwater Studies (IGS) – UFS, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Siphokazi Manundu</strong>, University of the Free State and Department of Water and Sanitation, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dr. Edgard Ngounda</strong>, University of the Free State, South Africa</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Dr. NGANDJUI T. Yvan Anderson</strong>, Institute for Nanotechnology and Water Sustainability (iNanoWS), UNISA</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Lieutenant N. S. Tibane</strong>, Faculty of Military Science, Stellenbosch University</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Candidate Officer I. G. Chokoe</strong>, Faculty of Military Science, Stellenbosch University</p>
-                    </div>
-                </div>
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <p class="card-text"><strong>Lehlogonolo Chiloane</strong>, Senior Environmental Consultant at an environmental and mineral resources consulting company in Johannesburg</p>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section>

@@ -1,85 +1,28 @@
-﻿<section class="speaking-section3">
-	<div class="container">
-		<div class="title-section center">
-			<h1>Conference Committee</h1>
-		</div>
-		<div class="speakers-box">
+﻿@model IEnumerable<ACIAM.Models.Conference>
 
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/images/conference/Picture-1-300x300.jpg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Prof. Dr. A. Atangana </a></h2>
-							<span></span>
-							<p>University of Free State South Africa</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/images/conference/Picture-2-300x276.png" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Prof. Dr. Oluwole Daniel Makinde</a></h2>
-							<span>[MFR, FAAS, FIAPS, FNMS ]</span>
-							<p>
-								Vice President-African Mathematical Union (Southern Africa Region),
-								Stellenbosch University, South Africa
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/images/conference/gaston_nguerekata.jpg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Prof. Dr. Gaston Nguerekata</a></h2>
-							<br>
-							<p>Morgan State University, United States of America</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/images/conference/mamadou.jpeg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Prof. Dr. Mamadou Abdoul Diop</a></h2>
-							<span></span>
-							<p>Université Gaston Berger de Saint Louis, Senegal</p>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/images/conference/haramaya.jpeg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Prof. Dr. G.T. Tilahun – Haramaya</a></h2>
-							<span></span>
-							<p>University, Ethiopia</p>
-		
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="speaker-post">
-						<a href="#"><img src="~/upload/speakers/sp1.jpg" alt=""></a>
-						<div class="speaker-content">
-							<h2><a href="#">Prof. Dr. W. Schilders</a></h2>
-							<span></span>
-							<p>President, ICIAM, Netherland</p>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
+<section class="speaking-section3">
+    <div class="container">
+        <div class="title-section center">
+            <h1>Organising Committee</h1>
+        </div>
+        <div class="speakers-box">
+            <div class="row">
+                @foreach (var conference in Model)
+                {
+                    <div class="col-lg-6">
+                        <div class="speaker-post">
+                            <a href="#">
+                                <img src="~/uploads/@conference.Image" alt="@conference.Title" />
+                            </a>
+                            <div class="speaker-content">
+                                <h2><a href="#">@conference.Title</a></h2>
+                                <span>@conference.SubTitle</span>
+                                <p>@conference.Description</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </section>

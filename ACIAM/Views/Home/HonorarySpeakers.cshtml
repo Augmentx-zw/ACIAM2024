@@ -1,7 +1,55 @@
-﻿<section class="speaking-section3">
+﻿@model IEnumerable<ACIAM.Models.Speaker>
+
+<!-- speaking-section2
+	================================================== -->
+<section class="speaking-section2">
 	<div class="container">
-		<div class="title-section center">
-			<h1>Honorary Speakers</h1>
+		<div class="title-section white-style">
+			<div class="row">
+				<div class="col-md-8">
+					<h1>Honorary Speakers</h1>
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+
+		</div>
+		<div class="speakers-box">
+
+			<div class="row">
+				@foreach (var speaker in Model)
+				{
+					<div class="col-lg-3 col-md-4 col-sm-6">
+						<div class="speaker-post">
+							<a href="#"><img src="~/uploads/@speaker.Image" alt="@speaker.Title"></a>
+							<div class="speaker-content">
+								<h2><a asp-action="SpeakerSingle">@speaker.Title</a></h2>
+								<span>@speaker.Description</span>
+							</div>
+						</div>
+					</div>
+				}
+			</div>
+
 		</div>
 	</div>
 </section>
+<!-- End speaking section2 -->
+<!-- event-banner-section
+================================================== -->
+<section class="event-banner-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9 col-md-8">
+				<h1>Are you ready joing us?</h1>
+				<p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. </p>
+			</div>
+			<div class="col-lg-3 col-md-4">
+				<div class="button-banner-box">
+					<a href="#" class="default-button">Register Today</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End event-banner section -->

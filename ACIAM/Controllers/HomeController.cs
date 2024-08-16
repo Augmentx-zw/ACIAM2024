@@ -1,5 +1,7 @@
+using ACIAM.Data;
 using ACIAM.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace ACIAM.Controllers
@@ -7,10 +9,12 @@ namespace ACIAM.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
+        private readonly AppDbContext _context;
 
-		public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AppDbContext context)
 		{
 			_logger = logger;
+			_context = context;
 		}
 
 		public IActionResult Index()
@@ -23,25 +27,41 @@ namespace ACIAM.Controllers
 			return View();
 		}
 
-		public IActionResult OrganisingCommittee()
-		{
-			return View();
-		}
+        public async Task<IActionResult> OrganisingCommittee()
+        {
+            var organisingConferences = await _context.Conferences
+                .Where(c => c.Category.ToLower() == "organising")
+                .ToListAsync();
 
-		public IActionResult LocalOrganisingCommittee()
-		{
-			return View();
-		}
+            return View(organisingConferences);
+        }
 
-		public IActionResult ScientificCommittee()
+        public async Task<IActionResult> LocalOrganisingCommittee()
 		{
-			return View();
-		}
+            var local = await _context.Conferences
+                .Where(c => c.Category.ToLower() == "local")
+                .ToListAsync();
 
-		public IActionResult HonoraryCommittee()
+            return View(local);
+        }
+
+		public async Task<IActionResult> ScientificCommittee()
 		{
-			return View();
-		}
+            var scientific = await _context.Conferences
+                .Where(c => c.Category.ToLower() == "local")
+                .ToListAsync();
+
+            return View(scientific);
+        }
+
+		public async Task<IActionResult> HonoraryCommittee()
+		{
+            var honorary = await _context.Conferences
+                .Where(c => c.Category.ToLower() == "local")
+                .ToListAsync();
+
+            return View(honorary);
+        }
 
 		public IActionResult Speakers()
 		{
@@ -63,27 +83,48 @@ namespace ACIAM.Controllers
 			return View();
 		}
 
-		public IActionResult PlenarySpeakers()
+		public async Task<IActionResult> PlenarySpeakers()
 		{
-			return View(); // Returns the PlenarySpeakers.cshtml view
-		}
+            var plenary = await _context.Speakers
+                .Where(c => c.Category.ToLower() == "plenary")
+                .ToListAsync();
 
-		public IActionResult InvitedSpeakers()
+            return View(plenary);
+        }
+
+		public async Task<IActionResult> InvitedSpeakers()
 		{
-			return View(); // Returns the InvitedSpeakers.cshtml view
-		}
+            var plenary = await _context.Speakers
+                .Where(c => c.Category.ToLower() == "invited")
+                .ToListAsync();
 
-		public IActionResult SpecialSpeakers()
+            return View(plenary);
+        }
+
+		public async Task<IActionResult> SpecialSpeakers()
 		{
-			return View(); // Returns the SpecialSpeakers.cshtml view
-		}
+            var special = await _context.Speakers
+                .Where(c => c.Category.ToLower() == "special")
+                .ToListAsync();
 
-		public IActionResult HonorarySpeakers()
+            return View(special);
+        }
+
+		public async Task<IActionResult> HonorarySpeakers()
 		{
-			return View(); // Returns the HonorarySpeakers.cshtml view
-		}
+            var honorary = await _context.Speakers
+                .Where(c => c.Category.ToLower() == "honorary")
+                .ToListAsync();
 
-		public IActionResult SpeakerSingle()
+            return View(honorary);
+        }
+
+		public async Task<IActionResult> SpeakerSingle(int id)
+		{
+			return View();
+		}
+		
+		public async Task<IActionResult> CommitteeSingle(int id)
 		{
 			return View();
 		}
