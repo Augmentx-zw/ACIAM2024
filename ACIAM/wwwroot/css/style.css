@@ -571,7 +571,7 @@ section.event-promo-section {
   /*
      * Set a base background for 1x environments.
      */
-  background: #111 url("../upload/banners/1.jpg") center center no-repeat;
+  background: #111 url("../images/home/1.jpg") center center no-repeat;
   background-size: cover;
   /*
      * Create an @2x-ish media query.
@@ -588,12 +588,14 @@ section.event-promo-section {
   align-items: center; }
   @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
     section.event-promo-section {
-      background: #111 url("../upload/banners/1@2x.jpg") center center no-repeat;
-      background-size: cover; } }
+        background: #111 url("../images/home/1.jpg") center center no-repeat;
+        background-size: cover;
+    } }
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     section.event-promo-section {
-      background: #111 url("../upload/banners/1@2x.jpg") center center no-repeat;
-      background-size: cover; } }
+        background: #111 url("../images/home/1.jpg") center center no-repeat;
+        background-size: cover;
+    } }
   section.event-promo-section .event-center {
     width: 100%; }
     section.event-promo-section .event-center h1 {
@@ -622,37 +624,38 @@ section.event-promo-section {
           line-height: 72px; }
 
 section.promo-banner-section {
-  /*
+    /*
    * Set a counter and get the length of the image path.
    */
-  /*
+    /*
    * Loop ver the image path and figure out the
    * position of the dot where the extension begins.
    */
-  /*
+    /*
    * If we were able to figure out where the extension is,
    * slice the path into a base and an extension. Use that to
    * calculate urls for different density environments. Set
    * values for different environments.
    */
-  /*
+    /*
      * Set a base background for 1x environments.
      */
-  background: #111 url("../upload/banners/ban1.jpg") center center no-repeat;
-  background-size: cover;
-  /*
+    background: #111 url("../images/home/1.jpg") center center no-repeat;
+    background-size: cover;
+    /*
      * Create an @2x-ish media query.
      */
-  /*
+    /*
      * Create media queries for all environments that the user has
      * provided images for.
      */
-  /*
+    /*
    * If anything went wrong trying to separate the file from its
    * extension, set a background value without doing anything to it.
    */
-  padding: 200px 0;
-  text-align: center; }
+    padding: 200px 0;
+    text-align: center;
+}
   @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
     section.promo-banner-section {
       background: #111 url("../upload/banners/ban1@2x.jpg") center center no-repeat;
